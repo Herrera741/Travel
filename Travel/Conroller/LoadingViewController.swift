@@ -8,36 +8,29 @@
 import UIKit
 
 class LoadingViewController: UIViewController {
-    private let isUserLoggedIn = false
+    private let isUserLoggedIn = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        delay(durationInSeconds: 2.0) {
             self.showInitialView()
         }
     }
     
-    private func setupViews() {
-        view.backgroundColor = .systemMint
-    }
-    
     private func showInitialView() {
-        // if user logged in, show tab bar controller
-        // else, show onboarding controller
         if isUserLoggedIn {
-            let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarController")
+            let mainTabBarController = UIStoryboard(name: K.StoryboardID.main, bundle: nil).instantiateViewController(withIdentifier: K.StoryboardID.mainTabBarController)
             
             if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
                let window = sceneDelegate.window {
                 window.rootViewController = mainTabBarController
             }
         } else {
-            performSegue(withIdentifier: "showOnboarding", sender: nil)
+            performSegue(withIdentifier: K.Seque.showOnboardingScreen, sender: nil)
         }
         
     }
