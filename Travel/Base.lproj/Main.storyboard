@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -82,26 +83,93 @@
             </objects>
             <point key="canvasLocation" x="3109" y="-338"/>
         </scene>
-        <!--View Controller-->
+        <!--Onboarding View Controller-->
         <scene sceneID="5J3-q5-XIK">
             <objects>
-                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" id="fMh-pp-AFP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" id="fMh-pp-AFP" customClass="OnboardingViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z4v-uI-rsk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQ0-x1-i7E">
-                                <rect key="frame" x="151.66666666666666" y="415.66666666666669" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-9p-kQZ">
+                                <rect key="frame" x="25" y="718" width="343" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="20Q-Hg-5Qz"/>
+                                    <constraint firstAttribute="height" constant="50" id="3D8-IU-TuY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="69Y-Ez-4Uu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Get Started">
+                                    <fontDescription key="titleFontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getStartedBtnTapped:" destination="fMh-pp-AFP" eventType="touchUpInside" id="Ptn-lu-ofl"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GzK-nh-BPO">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GzK-nh-BPO" secondAttribute="height" multiplier="1:1" id="nlJ-Gv-iMd"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SbI-x1-fFq">
+                                    <size key="itemSize" width="265" height="219"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FpI-9y-kai">
+                                        <rect key="frame" x="64" y="0.0" width="265" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1sq-yf-gny">
+                                            <rect key="frame" x="0.0" y="0.0" width="265" height="219"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <size key="customSize" width="265" height="219"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-X9-8Z2">
+                                <rect key="frame" x="138.66666666666666" y="409" width="115.66666666666666" height="26"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemIndigoColor"/>
+                            </pageControl>
+                            <stackView opaque="NO" tag="-1" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7a9-OP-iIS">
+                                <rect key="frame" x="24" y="458.99999999999994" width="345" height="128.33333333333331"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Why use Travel?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpE-Kj-95A">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="38.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Travel allows you to travel the world, make new friends and create memorable experiences." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADI-AL-biN">
+                                        <rect key="frame" x="0.0" y="46.333333333333314" width="345" height="82"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qdk-Xh-c1G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jQ0-x1-i7E" firstAttribute="centerY" secondItem="z4v-uI-rsk" secondAttribute="centerY" id="mV9-JC-rEN"/>
-                            <constraint firstItem="jQ0-x1-i7E" firstAttribute="centerX" secondItem="z4v-uI-rsk" secondAttribute="centerX" id="vkT-Qi-3zz"/>
+                            <constraint firstItem="GzK-nh-BPO" firstAttribute="top" secondItem="z4v-uI-rsk" secondAttribute="top" id="E3k-o1-qQu"/>
+                            <constraint firstItem="iWU-X9-8Z2" firstAttribute="centerX" secondItem="z4v-uI-rsk" secondAttribute="centerX" id="GnS-U7-OJn"/>
+                            <constraint firstItem="GzK-nh-BPO" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" id="NZK-qN-kjS"/>
+                            <constraint firstItem="eFC-9p-kQZ" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" constant="25" id="QTr-uv-MnI"/>
+                            <constraint firstItem="GzK-nh-BPO" firstAttribute="trailing" secondItem="Qdk-Xh-c1G" secondAttribute="trailing" id="UFM-50-a1t"/>
+                            <constraint firstItem="7a9-OP-iIS" firstAttribute="top" secondItem="iWU-X9-8Z2" secondAttribute="bottom" constant="24" id="fRb-s3-W7w"/>
+                            <constraint firstItem="7a9-OP-iIS" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" constant="24" id="fyN-tv-8bT"/>
+                            <constraint firstItem="Qdk-Xh-c1G" firstAttribute="bottom" secondItem="eFC-9p-kQZ" secondAttribute="bottom" constant="50" id="hH4-uR-IqW"/>
+                            <constraint firstItem="iWU-X9-8Z2" firstAttribute="top" secondItem="GzK-nh-BPO" secondAttribute="bottom" constant="16" id="hts-9d-QHj"/>
+                            <constraint firstItem="Qdk-Xh-c1G" firstAttribute="trailing" secondItem="eFC-9p-kQZ" secondAttribute="trailing" constant="25" id="oyX-mH-wPo"/>
+                            <constraint firstItem="Qdk-Xh-c1G" firstAttribute="trailing" secondItem="7a9-OP-iIS" secondAttribute="trailing" constant="24" id="pkh-OG-6Uc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BRK-zU-GDC"/>
@@ -182,6 +250,18 @@
         <image name="imgBalloon" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

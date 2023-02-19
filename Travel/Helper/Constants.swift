@@ -10,6 +10,7 @@ import Foundation
 struct K {
     struct Seque {
         static let showOnboardingScreen = "showOnboarding"
+        static let showLoginSignupScreen = "showLoginSignup"
     }
     
     struct StoryboardID {

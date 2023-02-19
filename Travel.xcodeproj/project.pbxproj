@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4C5720929A2D5CB0085AB12 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5720829A2D5CB0085AB12 /* OnboardingViewController.swift */; };
 		B4F04F72299F260C00E47558 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F04F71299F260C00E47558 /* AppDelegate.swift */; };
 		B4F04F74299F260C00E47558 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F04F73299F260C00E47558 /* SceneDelegate.swift */; };
 		B4F04F79299F260C00E47558 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F04F77299F260C00E47558 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4C5720829A2D5CB0085AB12 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		B4F04F6E299F260C00E47558 /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F04F71299F260C00E47558 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4F04F73299F260C00E47558 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				B4F04F86299FFDAB00E47558 /* LoadingViewController.swift */,
 				B4F04F8D29A0642E00E47558 /* SettingsViewController.swift */,
+				B4C5720829A2D5CB0085AB12 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				B4F04F8C29A05D2600E47558 /* Constants.swift in Sources */,
 				B4F04F72299F260C00E47558 /* AppDelegate.swift in Sources */,
 				B4F04F74299F260C00E47558 /* SceneDelegate.swift in Sources */,
+				B4C5720929A2D5CB0085AB12 /* OnboardingViewController.swift in Sources */,
 				B4F04F87299FFDAB00E47558 /* LoadingViewController.swift in Sources */,
 				B4F04F8A29A0565C00E47558 /* Helper.swift in Sources */,
 				B4F04F9129A17EAC00E47558 /* PresenterManager.swift in Sources */,
