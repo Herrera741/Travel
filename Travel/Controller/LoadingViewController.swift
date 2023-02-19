@@ -23,12 +23,7 @@ class LoadingViewController: UIViewController {
     
     private func showInitialView() {
         if isUserLoggedIn {
-            let mainTabBarController = UIStoryboard(name: K.StoryboardID.main, bundle: nil).instantiateViewController(withIdentifier: K.StoryboardID.mainTabBarController)
-            
-            if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
-               let window = sceneDelegate.window {
-                window.rootViewController = mainTabBarController
-            }
+            PresenterManager.shared.show(vc: .mainTabBarController)
         } else {
             performSegue(withIdentifier: K.Seque.showOnboardingScreen, sender: nil)
         }

@@ -16,6 +16,7 @@
 		B4F04F8A29A0565C00E47558 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F04F8929A0565C00E47558 /* Helper.swift */; };
 		B4F04F8C29A05D2600E47558 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F04F8B29A05D2600E47558 /* Constants.swift */; };
 		B4F04F8E29A0642E00E47558 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F04F8D29A0642E00E47558 /* SettingsViewController.swift */; };
+		B4F04F9129A17EAC00E47558 /* PresenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F04F9029A17EAC00E47558 /* PresenterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B4F04F8929A0565C00E47558 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B4F04F8B29A05D2600E47558 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B4F04F8D29A0642E00E47558 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B4F04F9029A17EAC00E47558 /* PresenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		B4F04F70299F260C00E47558 /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				B4F04F8F29A17E8D00E47558 /* Manager */,
 				B4F04F8829A0563B00E47558 /* Helper */,
 				B4F04F85299FFD7D00E47558 /* Controller */,
 				B4F04F71299F260C00E47558 /* AppDelegate.swift */,
@@ -90,6 +93,14 @@
 				B4F04F8B29A05D2600E47558 /* Constants.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		B4F04F8F29A17E8D00E47558 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B4F04F9029A17EAC00E47558 /* PresenterManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 				B4F04F74299F260C00E47558 /* SceneDelegate.swift in Sources */,
 				B4F04F87299FFDAB00E47558 /* LoadingViewController.swift in Sources */,
 				B4F04F8A29A0565C00E47558 /* Helper.swift in Sources */,
+				B4F04F9129A17EAC00E47558 /* PresenterManager.swift in Sources */,
 				B4F04F8E29A0642E00E47558 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
