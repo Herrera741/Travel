@@ -10,6 +10,9 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +29,17 @@ class OnboardingViewController: UIViewController {
     }
     
     private func setupViews() {
-        
+        view.backgroundColor = .white
     }
     
     @IBAction func getStartedBtnTapped(_ sender: UIButton) {
         performSegue(withIdentifier: K.Seque.showLoginSignupScreen, sender: nil)
+    }
+    
+    private func showCaption(atIndex index: Int) {
+        let slide = Slide.collection[index]
+        titleLabel.text = slide.title
+        descriptionLabel.text = slide.description
     }
 }
 
@@ -56,4 +65,9 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         return 0
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        showCaption(atIndex: index)
+        pageControl.currentPage = index
+    }
 }

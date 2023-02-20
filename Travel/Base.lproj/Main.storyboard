@@ -92,7 +92,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFC-9p-kQZ">
-                                <rect key="frame" x="25" y="718" width="343" height="50"/>
+                                <rect key="frame" x="36" y="718" width="321" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="20Q-Hg-5Qz"/>
@@ -180,19 +180,22 @@
                             <constraint firstItem="GzK-nh-BPO" firstAttribute="top" secondItem="z4v-uI-rsk" secondAttribute="top" id="E3k-o1-qQu"/>
                             <constraint firstItem="iWU-X9-8Z2" firstAttribute="centerX" secondItem="z4v-uI-rsk" secondAttribute="centerX" id="GnS-U7-OJn"/>
                             <constraint firstItem="GzK-nh-BPO" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" id="NZK-qN-kjS"/>
-                            <constraint firstItem="eFC-9p-kQZ" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" constant="25" id="QTr-uv-MnI"/>
+                            <constraint firstItem="eFC-9p-kQZ" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" constant="36" id="QTr-uv-MnI"/>
                             <constraint firstItem="GzK-nh-BPO" firstAttribute="trailing" secondItem="Qdk-Xh-c1G" secondAttribute="trailing" id="UFM-50-a1t"/>
                             <constraint firstItem="7a9-OP-iIS" firstAttribute="top" secondItem="iWU-X9-8Z2" secondAttribute="bottom" constant="24" id="fRb-s3-W7w"/>
                             <constraint firstItem="7a9-OP-iIS" firstAttribute="leading" secondItem="Qdk-Xh-c1G" secondAttribute="leading" constant="24" id="fyN-tv-8bT"/>
                             <constraint firstItem="Qdk-Xh-c1G" firstAttribute="bottom" secondItem="eFC-9p-kQZ" secondAttribute="bottom" constant="50" id="hH4-uR-IqW"/>
                             <constraint firstItem="iWU-X9-8Z2" firstAttribute="top" secondItem="GzK-nh-BPO" secondAttribute="bottom" constant="16" id="hts-9d-QHj"/>
-                            <constraint firstItem="Qdk-Xh-c1G" firstAttribute="trailing" secondItem="eFC-9p-kQZ" secondAttribute="trailing" constant="25" id="oyX-mH-wPo"/>
+                            <constraint firstItem="Qdk-Xh-c1G" firstAttribute="trailing" secondItem="eFC-9p-kQZ" secondAttribute="trailing" constant="36" id="oyX-mH-wPo"/>
                             <constraint firstItem="Qdk-Xh-c1G" firstAttribute="trailing" secondItem="7a9-OP-iIS" secondAttribute="trailing" constant="24" id="pkh-OG-6Uc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BRK-zU-GDC"/>
                     <connections>
                         <outlet property="collectionView" destination="GzK-nh-BPO" id="F5W-Ey-zMJ"/>
+                        <outlet property="descriptionLabel" destination="ADI-AL-biN" id="p1D-F3-h8c"/>
+                        <outlet property="pageControl" destination="iWU-X9-8Z2" id="8b7-C4-I4Z"/>
+                        <outlet property="titleLabel" destination="mpE-Kj-95A" id="acC-B3-OF0"/>
                         <segue destination="5ke-op-fVl" kind="showDetail" identifier="showLoginSignup" id="obI-2h-xAd"/>
                     </connections>
                 </viewController>
