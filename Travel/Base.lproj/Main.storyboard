@@ -121,7 +121,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FpI-9y-kai">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="FpI-9y-kai">
                                         <rect key="frame" x="64" y="0.0" width="265" height="219"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1sq-yf-gny">
@@ -132,6 +132,10 @@
                                         <size key="customSize" width="265" height="219"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="fMh-pp-AFP" id="UaC-Kj-gYB"/>
+                                    <outlet property="delegate" destination="fMh-pp-AFP" id="mV2-zn-DuM"/>
+                                </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iWU-X9-8Z2">
                                 <rect key="frame" x="138.66666666666666" y="409" width="115.66666666666666" height="26"/>
@@ -174,6 +178,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BRK-zU-GDC"/>
                     <connections>
+                        <outlet property="collectionView" destination="GzK-nh-BPO" id="F5W-Ey-zMJ"/>
                         <segue destination="5ke-op-fVl" kind="showDetail" identifier="showLoginSignup" id="obI-2h-xAd"/>
                     </connections>
                 </viewController>
