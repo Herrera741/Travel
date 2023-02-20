@@ -16,6 +16,8 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        setupPageControl()
         setupCollectionView()
     }
     
@@ -26,6 +28,10 @@ class OnboardingViewController: UIViewController {
         collectionView.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+    }
+
+    private func setupPageControl() {
+        pageControl.numberOfPages = Slide.collection.count
     }
     
     private func setupViews() {
