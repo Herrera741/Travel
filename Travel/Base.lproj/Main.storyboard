@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="148.85496183206106" y="3.5211267605633805"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Login Signup View Controller-->
         <scene sceneID="nUc-kn-HN1">
             <objects>
-                <viewController id="5ke-op-fVl" customClass="LoginViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5ke-op-fVl" customClass="LoginSignupViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DH2-Ha-jvZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,6 +227,9 @@
                                     <segment title="Login"/>
                                     <segment title="Sign Up"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="5ke-op-fVl" eventType="valueChanged" id="nny-yv-wgf"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Sdi-59-pI2">
                                 <rect key="frame" x="48" y="99.000000000000028" width="297" height="398.66666666666674"/>
@@ -267,6 +270,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                             <fontDescription key="titleFontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgetPasswordBtnTapped:" destination="5ke-op-fVl" eventType="touchUpInside" id="lYD-xz-faA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKc-rz-Jdm">
                                         <rect key="frame" x="0.0" y="282.66666666666669" width="297" height="50"/>
@@ -307,6 +313,16 @@
                             <constraint firstItem="MHT-Fn-r5z" firstAttribute="top" secondItem="DH2-Ha-jvZ" secondAttribute="top" constant="8" id="vuF-tu-7zD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="s0q-72-RIi" id="b1G-9H-Q9m"/>
+                        <outlet property="emailTextField" destination="R3T-WF-N5f" id="aEY-iH-Ru9"/>
+                        <outlet property="errorLabel" destination="Evd-cw-NEp" id="xPQ-PH-Au3"/>
+                        <outlet property="forgetPasswordBtn" destination="6ug-9Z-LOF" id="Pp4-3U-pgi"/>
+                        <outlet property="loginBtn" destination="E97-F6-88A" id="InR-bH-WTP"/>
+                        <outlet property="passwordTextField" destination="p8a-8H-pMe" id="ECk-SN-C0M"/>
+                        <outlet property="segmentedControl" destination="6qT-oK-kNG" id="xca-Vl-iHD"/>
+                        <outlet property="signupBtn" destination="oKc-rz-Jdm" id="PDz-lg-bEc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gC1-gO-GQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
