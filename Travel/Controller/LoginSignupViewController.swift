@@ -8,6 +8,8 @@
 import UIKit
 
 class LoginSignupViewController: UIViewController {
+    weak var delegate: OnboardingDelegate?
+    private let isLoginSuccessful = false
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,20 +30,42 @@ class LoginSignupViewController: UIViewController {
         }
     }
     
+    private var errorMessage: String? {
+        didSet {
+            showErrorMessageIfNeeded(text: errorMessage)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewsForPageType(pageType: .login)
     }
     
     private func setupViewsForPageType(pageType: PageType) {
-        errorLabel.text = ""
+        errorLabel.text = nil
         confirmPasswordTextField.isHidden = pageType == .login
         signupBtn.isHidden = pageType == .login
         forgetPasswordBtn.isHidden = pageType == .signup
         loginBtn.isHidden = pageType == .signup
     }
     
+    private func showErrorMessageIfNeeded(text: String?) {
+        errorLabel.isHidden = text == nil
+        errorLabel.text = text
+    }
+    
     @IBAction func forgetPasswordBtnTapped(_ sender: Any) {
+    }
+    
+    @IBAction func signupBtnTapped(_ sender: Any) {
+    }
+
+    @IBAction func loginBtnTapped(_ sender: Any) {
+        if isLoginSuccessful {
+            delegate?.showMainTabBarController()
+        } else {
+            errorMessage = "Your password is invalid. Please try again."
+        }
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {

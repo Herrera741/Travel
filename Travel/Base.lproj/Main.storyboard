@@ -285,6 +285,9 @@
                                             <fontDescription key="titleFontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signupBtnTapped:" destination="5ke-op-fVl" eventType="touchUpInside" id="TPN-Xv-skq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E97-F6-88A">
                                         <rect key="frame" x="0.0" y="348.66666666666669" width="297" height="50"/>
@@ -297,6 +300,9 @@
                                             <fontDescription key="titleFontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginBtnTapped:" destination="5ke-op-fVl" eventType="touchUpInside" id="87M-a0-eCQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

@@ -7,8 +7,11 @@
 
 import UIKit
 
+protocol OnboardingDelegate: AnyObject {
+    func showMainTabBarController()
+}
+
 class OnboardingViewController: UIViewController {
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -40,6 +43,14 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func getStartedBtnTapped(_ sender: UIButton) {
         performSegue(withIdentifier: K.Seque.showLoginSignupScreen, sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Seque.showLoginSignupScreen {
+            if let destination = segue.destination as? LoginSignupViewController {
+                destination.delegate = self
+            }
+        }
     }
     
     private func showCaption(atIndex index: Int) {
@@ -75,5 +86,15 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         showCaption(atIndex: index)
         pageControl.currentPage = index
+    }
+}
+
+extension OnboardingViewController: OnboardingDelegate {
+    func showMainTabBarController() {
+        if let loginSignupViewController = self.presentedViewController as? LoginSignupViewController {
+            loginSignupViewController.dismiss(animated: true) {
+                PresenterManager.shared.show(vc: .mainTabBarController)
+            }
+        }
     }
 }
