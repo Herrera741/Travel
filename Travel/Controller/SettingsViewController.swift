@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class SettingsViewController: UIViewController {
 
@@ -19,6 +20,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func logoutBtnTapped(_ sender: UIBarButtonItem) {
-        PresenterManager.shared.show(vc: .onboarding)
+        MBProgressHUD.showAdded(to: view, animated: true)
+        delay(durationInSeconds: 0.5) {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            PresenterManager.shared.show(vc: .onboarding)
+        }
     }
 }

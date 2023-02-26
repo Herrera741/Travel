@@ -68,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="4034.3511450381679" y="351.40845070422534"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="gnD-H5-FjN">
             <objects>
                 <viewController id="eP0-bl-jBy" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                         <viewLayoutGuide key="safeArea" id="VKs-DT-Cvg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="cm9-93-LMz"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="cm9-93-LMz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOR-2f-FUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -352,11 +352,11 @@
             </objects>
             <point key="canvasLocation" x="2108" y="4"/>
         </scene>
-        <!--Item 2-->
+        <!--Settings-->
         <scene sceneID="2Az-Ar-sa6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qzg-gu-ok0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="hVR-86-NWB"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="hVR-86-NWB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CwH-iD-jnM">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -373,6 +373,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="icEqual" width="512" height="512"/>
         <image name="imgBalloon" width="512" height="512"/>
         <namedColor name="AccentColor">

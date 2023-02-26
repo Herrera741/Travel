@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class LoginSignupViewController: UIViewController {
+    
     weak var delegate: OnboardingDelegate?
-    private let isLoginSuccessful = false
+    private let isLoginSuccessful = true
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -61,10 +63,14 @@ class LoginSignupViewController: UIViewController {
     }
 
     @IBAction func loginBtnTapped(_ sender: Any) {
-        if isLoginSuccessful {
-            delegate?.showMainTabBarController()
-        } else {
-            errorMessage = "Your password is invalid. Please try again."
+        MBProgressHUD.showAdded(to: view, animated: true)
+        delay(durationInSeconds: 2.0) {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if self.isLoginSuccessful {
+                self.delegate?.showMainTabBarController()
+            } else {
+                self.errorMessage = "Your password is invalid. Please try again."
+            }
         }
     }
     
